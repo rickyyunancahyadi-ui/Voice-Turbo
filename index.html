@@ -1,216 +1,230 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voice Turbo – AI Voice Generator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice Turbo – AI Voice Generator</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --primary:#6C5CE7;
-      --secondary:#00CEC9;
-      --dark:#020617;
-      --light:#F5F5FB;
-    }
+<style>
+:root{
+  --primary:#6C5CE7;
+  --secondary:#00CEC9;
+  --dark:#020617;
+  --light:#F5F5FB;
+}
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Inter',sans-serif;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
 
-    body{
-      background:var(--dark);
-      color:#fff;
-      overflow-x:hidden;
-    }
+body{
+  background:var(--dark);
+  color:#fff;
+  overflow-x:hidden;
+}
 
-    section{
-      padding:80px 8%;
-    }
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:16px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(2,6,23,.9);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+nav a{
+  color:#fff;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:600;
+}
 
-    h1,h2,h3{
-      font-weight:800;
-    }
+/* SECTION */
+section{
+  padding:100px 8%;
+}
 
-    p{
-      line-height:1.7;
-      opacity:.85;
-    }
+h1,h2,h3{
+  font-weight:800;
+}
 
-    .btn-primary{
-      background:linear-gradient(135deg,var(--primary),var(--secondary));
-      color:#fff;
-      padding:14px 30px;
-      border-radius:50px;
-      font-weight:700;
-      text-decoration:none;
-      display:inline-block;
-    }
+p{
+  opacity:.85;
+  line-height:1.7;
+}
 
-    .btn-outline{
-      background:transparent;
-      border:2px solid var(--secondary);
-      color:var(--secondary);
-      padding:14px 30px;
-      border-radius:50px;
-      font-weight:700;
-      text-decoration:none;
-      display:inline-block;
-    }
+.btn-primary{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#fff;
+  padding:14px 32px;
+  border-radius:50px;
+  font-weight:700;
+  text-decoration:none;
+  display:inline-block;
+}
 
-    #voice-demo{
-      position:relative;
-      z-index:5;
-    }
+.btn-outline{
+  border:2px solid var(--secondary);
+  color:var(--secondary);
+  padding:14px 32px;
+  border-radius:50px;
+  font-weight:700;
+  text-decoration:none;
+  display:inline-block;
+}
 
-    .card{
-      padding:28px;
-      border-radius:18px;
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.08);
-      text-align:center;
-    }
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+  max-width:1100px;
+  margin:0 auto;
+}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:24px;
-      max-width:900px;
-      margin:0 auto;
-    }
+.card{
+  padding:28px;
+  border-radius:18px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  text-align:center;
+}
 
-    .price-box{
-      max-width:360px;
-      margin:0 auto;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:20px;
-      padding:32px;
-      text-align:center;
-    }
+/* PRICE */
+.price-box{
+  max-width:380px;
+  margin:0 auto;
+  background:rgba(255,255,255,.05);
+  border-radius:22px;
+  padding:36px;
+  text-align:center;
+}
+.price{
+  font-size:40px;
+  font-weight:800;
+  margin:20px 0;
+}
 
-    .price{
-      font-size:36px;
-      font-weight:800;
-      margin:20px 0;
-    }
+/* WA FLOAT */
+.wa-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#25D366;
+  color:#fff;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 8px 20px rgba(37,211,102,.45);
+  z-index:9999;
+}
 
-    ul{
-      list-style:none;
-      padding:0;
-      margin:20px 0;
-      text-align:left;
-    }
-
-    ul li{
-      margin-bottom:10px;
-    }
-
-    footer{
-      padding:40px 8%;
-      text-align:center;
-      opacity:.6;
-    }
-
-    .wa-float{
-      position:fixed;
-      right:20px;
-      bottom:20px;
-      background:#25D366;
-      color:#fff;
-      padding:14px 18px;
-      border-radius:50px;
-      font-weight:700;
-      text-decoration:none;
-      box-shadow:0 8px 20px rgba(37,211,102,.45);
-      z-index:9999;
-    }
-  </style>
+footer{
+  padding:40px 8%;
+  text-align:center;
+  opacity:.6;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;">
-    <div>
-      <h1 style="font-size:44px;margin-bottom:16px;">Voice Turbo</h1>
-      <p style="max-width:600px;margin:0 auto 32px;">
-        AI Voice Generator untuk konten, iklan, narasi, dan promosi profesional
-      </p>
-      <a href="#voice-demo" class="btn-primary">Coba Demo Suara</a>
-    </div>
-  </section>
+<!-- NAV -->
+<nav>
+  <strong>Voice Turbo</strong>
+  <div>
+    <a href="#fitur">Fitur</a>
+    <a href="#cara-kerja">Cara Kerja</a>
+    <a href="#harga">Harga</a>
+  </div>
+</nav>
 
-  <!-- DEMO -->
-  <section id="voice-demo">
-    <h2 style="text-align:center;margin-bottom:12px;">Coba Demo Voice Turbo</h2>
-    <p style="text-align:center;max-width:600px;margin:0 auto 40px;">
-      Dengarkan contoh kualitas suara Voice Turbo
+<!-- HERO -->
+<section style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;">
+  <div>
+    <h1 style="font-size:48px;margin-bottom:16px;">Voice Turbo</h1>
+    <p style="max-width:640px;margin:0 auto 32px;">
+      AI Voice Generator untuk konten, iklan, narasi, dan promosi profesional.
     </p>
+    <a href="#demo" class="btn-primary">Coba Demo</a>
+  </div>
+</section>
 
-    <div class="grid">
-      <div class="card">
-        <p>🎧 Demo Suara Cewek</p>
-        <p style="opacity:.6;margin-bottom:16px;">Lily — Halus, Aktris</p>
-        <button class="btn-outline">▶ Play Lily</button>
-      </div>
+<!-- DEMO -->
+<section id="demo">
+  <h2 style="text-align:center;margin-bottom:12px;">Coba Demo Voice Turbo</h2>
+  <p style="text-align:center;margin-bottom:40px;">
+    Dengarkan contoh kualitas suara Voice Turbo
+  </p>
 
-      <div class="card">
-        <p>🎧 Demo Suara Cowok</p>
-        <p style="opacity:.6;margin-bottom:16px;">Adam — Dominan, Film</p>
-        <button class="btn-primary">▶ Play Adam</button>
-      </div>
+  <div class="grid">
+    <div class="card">
+      <h3>🎧 Lily</h3>
+      <p>Halus, Aktris</p>
+      <a class="btn-outline">▶ Play Demo</a>
     </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section>
-    <h2 style="text-align:center;margin-bottom:24px;">Kenapa Voice Turbo?</h2>
-    <p style="max-width:700px;margin:0 auto;text-align:center;">
-      Proses super cepat, suara natural seperti manusia, banyak pilihan karakter suara,
-      cocok untuk iklan, konten, narasi, dan promosi bisnis.
-    </p>
-  </section>
-
-  <!-- CARA KERJA -->
-  <section>
-    <h2 style="text-align:center;margin-bottom:24px;">Cara Kerja</h2>
-    <p style="text-align:center;">
-      Upload teks → pilih karakter suara → generate → download audio siap pakai.
-    </p>
-  </section>
-
-  <!-- HARGA -->
-  <section>
-    <h2 style="text-align:center;margin-bottom:24px;">Paket Unlimited</h2>
-    <div class="price-box">
-      <div class="price">Rp 80.000</div>
-      <ul>
-        <li>✅ Unlimited generate voice</li>
-        <li>✅ Banyak pilihan suara profesional</li>
-        <li>✅ Cocok untuk Ads & konten harian</li>
-        <li>✅ Tanpa watermark</li>
-        <li>✅ Hemat waktu & biaya produksi</li>
-      </ul>
-      <a href="https://wa.me/6285693623474" target="_blank" class="btn-primary">
-        Pilih Paket Ini
-      </a>
+    <div class="card">
+      <h3>🎧 Adam</h3>
+      <p>Dominan, Film</p>
+      <a class="btn-primary">▶ Play Demo</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Voice Turbo. All Rights Reserved.
-  </footer>
+<!-- FITUR -->
+<section id="fitur">
+  <h2 style="text-align:center;margin-bottom:40px;">Kenapa Voice Turbo?</h2>
+  <div class="grid">
+    <div class="card">⚡ Proses super cepat</div>
+    <div class="card">🎙️ Suara natural seperti manusia</div>
+    <div class="card">🎚️ Banyak pilihan karakter suara</div>
+    <div class="card">📢 Cocok untuk Ads & konten</div>
+    <div class="card">🚫 Tanpa watermark</div>
+    <div class="card">⬇️ Download MP3 / WAV</div>
+  </div>
+</section>
 
-  <!-- FLOATING WA -->
-  <a href="https://wa.me/6285693623474" target="_blank" class="wa-float">
-    💬 WhatsApp
-  </a>
+<!-- CARA KERJA -->
+<section id="cara-kerja">
+  <h2 style="text-align:center;margin-bottom:32px;">Cara Kerja</h2>
+  <div class="grid">
+    <div class="card">1️⃣ Masukkan teks / ide</div>
+    <div class="card">2️⃣ Pilih karakter suara</div>
+    <div class="card">3️⃣ Generate voice</div>
+    <div class="card">4️⃣ Download & pakai</div>
+  </div>
+</section>
+
+<!-- HARGA -->
+<section id="harga">
+  <h2 style="text-align:center;margin-bottom:32px;">Paket Unlimited</h2>
+  <div class="price-box">
+    <p>Akses Penuh</p>
+    <div class="price">Rp 80.000</div>
+    <p>Unlimited generate voice</p>
+    <br>
+    <a href="https://wa.me/6285693623474" target="_blank" class="btn-primary">
+      Pilih Paket Ini
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Voice Turbo. All Rights Reserved.
+</footer>
+
+<a href="https://wa.me/6285693623474" target="_blank" class="wa-float">💬 WhatsApp</a>
 
 </body>
 </html>
