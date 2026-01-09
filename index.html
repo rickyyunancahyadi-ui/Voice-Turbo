@@ -1,263 +1,260 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Voice Turbo – Segampang Itu. Sesimpel Itu.</title>
-  <style>
-    :root{
-      --bg-dark:#061626;
-      --bg-mid:#0b2a4a;
-      --text-main:#ffffff;
-      --text-soft:#cfd8e3;
-      --accent:#c0392b; /* merah elegan */
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice Turbo</title>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
+<style>
+:root{
+  --bg-light:#f6f7fb;
+  --bg-dark:#0f172a;
+  --text-dark:#0f172a;
+  --text-soft:#475569;
+  --accent:#e11d48;
+}
 
-    body{
-      background:linear-gradient(180deg, var(--bg-mid), var(--bg-dark));
-      color:var(--text-main);
-      line-height:1.6;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;
+}
 
-    section{
-      padding:90px 8%;
-    }
+body{
+  background:var(--bg-light);
+  color:var(--text-dark);
+  text-align:center;
+}
 
-    h1,h2,h3{
-      font-weight:700;
-      letter-spacing:-0.5px;
-    }
+section{
+  padding:100px 10%;
+}
 
-    p{
-      color:var(--text-soft);
-    }
+h1{
+  font-size:88px;
+  letter-spacing:-3px;
+}
 
-    /* ================= HERO ================= */
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-    }
+h2{
+  font-size:48px;
+  margin-bottom:20px;
+}
 
-    .hero-content{
-      max-width:700px;
-    }
+p{
+  color:var(--text-soft);
+  font-size:18px;
+}
 
-    .hero h1{
-      font-size:72px;
-      margin-bottom:16px;
-    }
+.highlight{
+  background:var(--accent);
+  color:#fff;
+  padding:6px 18px;
+  border-radius:12px;
+  display:inline-block;
+}
 
-    .hero-tagline{
-      font-size:32px;
-      font-weight:500;
-    }
+.btn{
+  display:inline-block;
+  margin-top:40px;
+  padding:18px 44px;
+  background:var(--text-dark);
+  color:#fff;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:18px;
+}
 
-    .highlight{
-      background:var(--accent);
-      padding:4px 12px;
-      border-radius:6px;
-      margin-left:6px;
-      display:inline-block;
-    }
+.divider{
+  height:120px;
+  background:linear-gradient(180deg,#f6f7fb,#ffffff);
+}
 
-    .hero-desc{
-      margin-top:24px;
-      font-size:18px;
-      max-width:600px;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  margin-top:60px;
+}
 
-    .btn{
-      display:inline-block;
-      margin-top:40px;
-      padding:16px 34px;
-      background:#ffffff;
-      color:#000;
-      font-weight:600;
-      border-radius:40px;
-      text-decoration:none;
-      transition:0.3s;
-    }
+.card{
+  background:#fff;
+  padding:40px 30px;
+  border-radius:24px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.05);
+}
 
-    .btn:hover{
-      transform:translateY(-2px);
-      opacity:0.9;
-    }
+.video-grid iframe{
+  width:100%;
+  height:420px;
+  border-radius:20px;
+}
 
-    /* ================= SECTION TITLE ================= */
-    .section-title{
-      font-size:42px;
-      margin-bottom:20px;
-    }
+.price{
+  font-size:52px;
+  margin:10px 0;
+}
 
-    .section-sub{
-      max-width:700px;
-      margin-bottom:50px;
-    }
+.old{
+  text-decoration:line-through;
+  color:#ef4444;
+}
 
-    /* ================= FEATURES ================= */
-    .features{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:30px;
-    }
+ul{
+  list-style:none;
+  margin-top:30px;
+}
 
-    .feature-box{
-      background:rgba(255,255,255,0.04);
-      padding:30px;
-      border-radius:20px;
-    }
+ul li{
+  margin-bottom:12px;
+}
 
-    .feature-box h3{
-      margin-bottom:10px;
-      font-size:20px;
-    }
+form{
+  max-width:520px;
+  margin:60px auto 0;
+  display:grid;
+  gap:18px;
+}
 
-    /* ================= FLOW ================= */
-    .flow{
-      font-size:26px;
-      font-weight:600;
-      margin-top:30px;
-    }
+input,textarea{
+  padding:16px;
+  border-radius:14px;
+  border:1px solid #cbd5e1;
+  font-size:16px;
+}
 
-    /* ================= PRICE ================= */
-    .price-box{
-      max-width:420px;
-      background:rgba(255,255,255,0.06);
-      padding:40px;
-      border-radius:30px;
-    }
+footer{
+  padding:40px;
+  color:#64748b;
+  font-size:14px;
+}
 
-    .old-price{
-      text-decoration:line-through;
-      color:#ffb3b3;
-      font-size:20px;
-    }
-
-    .new-price{
-      font-size:48px;
-      margin:10px 0 30px;
-    }
-
-    /* ================= AUDIO ================= */
-    .audio-links a{
-      display:block;
-      margin-bottom:12px;
-      color:#8ab4ff;
-      text-decoration:none;
-    }
-
-    /* ================= FOOTER ================= */
-    footer{
-      text-align:center;
-      padding:40px 20px;
-      color:#9fb3c8;
-      font-size:14px;
-    }
-
-    @media(max-width:768px){
-      .hero h1{font-size:52px;}
-      .hero-tagline{font-size:24px;}
-      .section-title{font-size:34px;}
-    }
-  </style>
+@media(max-width:768px){
+  h1{font-size:56px;}
+  h2{font-size:36px;}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Voice Turbo</h1>
-      <div class="hero-tagline">
-        Segampang itu. 
-        <span class="highlight">Sesimpel itu.</span>
-      </div>
-      <p class="hero-desc">
-        Voice Turbo adalah AI voice generator yang membantu mengubah teks menjadi suara profesional
-        untuk konten, iklan, narasi, dan kebutuhan digital lainnya.
-      </p>
-      <a href="#" class="btn">Coba Sekarang</a>
+<!-- HERO -->
+<section>
+  <h1>Voice Turbo</h1>
+  <p style="font-size:28px;margin-top:20px;">
+    Segampang itu. <span class="highlight">Sesimpel itu.</span>
+  </p>
+  <p style="margin-top:24px;max-width:720px;margin-inline:auto;">
+    AI Voice Generator untuk mengubah teks, foto, ide, dan file menjadi suara profesional.
+  </p>
+  <a class="btn" href="https://wa.me/6285693623474" target="_blank">Coba Sekarang</a>
+</section>
+
+<div class="divider"></div>
+
+<!-- MANFAAT -->
+<section>
+  <h2>Apa yang Voice Turbo bantu untuk Anda</h2>
+  <p>Membantu produksi suara jadi cepat, rapi, dan konsisten.</p>
+
+  <div class="grid">
+    <div class="card">Tanpa rekam suara manual</div>
+    <div class="card">Banyak karakter & gaya suara</div>
+    <div class="card">Cocok untuk iklan & konten</div>
+    <div class="card">Hasil siap pakai</div>
+  </div>
+</section>
+
+<!-- CARA KERJA -->
+<section>
+  <h2>Cara Kerja Voice Turbo</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Teks → Suara</h3>
+      <p>Ubah tulisan jadi voice over natural.</p>
     </div>
-  </section>
-
-  <!-- WHAT YOU GET -->
-  <section>
-    <h2 class="section-title">Apa yang Voice Turbo bantu buat Anda</h2>
-    <p class="section-sub">
-      Dirancang untuk mempermudah produksi suara tanpa ribet rekaman ulang.
-    </p>
-
-    <div class="features">
-      <div class="feature-box">
-        <h3>Voice Over Profesional</h3>
-        <p>Hasil suara rapi dan enak didengar.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Banyak Karakter Suara</h3>
-        <p>Bisa disesuaikan dengan gaya konten.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Cepat & Praktis</h3>
-        <p>Generate suara hanya dalam hitungan menit.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Cocok Semua Kebutuhan</h3>
-        <p>Iklan, edukasi, storytelling, podcast.</p>
-      </div>
+    <div class="card">
+      <h3>Foto → Suara</h3>
+      <p>Foto berbicara sesuai konteks visual.</p>
     </div>
-  </section>
-
-  <!-- FLOW -->
-  <section>
-    <h2 class="section-title">Cara kerja Voice Turbo</h2>
-    <p class="section-sub">Simpel. Tidak perlu skill teknis.</p>
-    <div class="flow">Teks → AI → Suara Profesional</div>
-  </section>
-
-  <!-- AUDIO DEMO -->
-  <section>
-    <h2 class="section-title">Dengarkan hasil Voice Turbo</h2>
-    <p class="section-sub">Contoh suara yang dihasilkan menggunakan Voice Turbo.</p>
-
-    <div class="audio-links">
-      <a href="https://www.instagram.com/reel/DTOnwcok7Q9/" target="_blank">▶ Demo Audio 1</a>
-      <a href="https://www.instagram.com/reel/DS8Wd-Qkz4z4/" target="_blank">▶ Demo Audio 2</a>
-      <a href="https://www.instagram.com/reel/DTNI3cykx7O/" target="_blank">▶ Demo Audio 3</a>
+    <div class="card">
+      <h3>Ide / Script → Suara</h3>
+      <p>Ide singkat langsung jadi narasi.</p>
     </div>
-  </section>
-
-  <!-- PRICE -->
-  <section>
-    <h2 class="section-title">Harga Voice Turbo</h2>
-
-    <div class="price-box">
-      <div class="old-price">Rp 199.000</div>
-      <div class="new-price">Rp 80.000</div>
-      <a href="#" class="btn">Coba Sekarang</a>
+    <div class="card">
+      <h3>File → Suara</h3>
+      <p>Dokumen dibacakan otomatis.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section>
-    <h2 class="section-title">Siap bikin suara profesional?</h2>
-    <p class="section-sub">
-      Tidak perlu ribet. Tidak perlu rekam ulang.  
-      Voice Turbo siap bantu kebutuhan suara Anda.
-    </p>
-    <a href="#" class="btn">Coba Sekarang</a>
-  </section>
+<!-- HASIL -->
+<section>
+  <h2>Hasil Audisi Voice Turbo</h2>
 
-  <footer>
-    © 2026 Voice Turbo. All rights reserved.
-  </footer>
+  <div class="video-grid grid">
+    <iframe src="https://www.instagram.com/reel/DTOnwcok7Q9/embed"></iframe>
+    <iframe src="https://www.instagram.com/reel/DS8Wd-Qkz4z4/embed"></iframe>
+    <iframe src="https://www.instagram.com/reel/DTNI3cykx7O/embed"></iframe>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section>
+  <h2>Apa kata pengguna</h2>
+
+  <div class="grid">
+    <div class="card">“Bikin konten jadi cepet banget.”</div>
+    <div class="card">“Suaranya rapi, nggak kaya robot.”</div>
+    <div class="card">“Hemat waktu rekaman parah.”</div>
+    <div class="card">“Cocok buat iklan & narasi.”</div>
+    <div class="card">“Worth it buat creator.”</div>
+  </div>
+</section>
+
+<!-- HARGA -->
+<section>
+  <h2>Harga Voice Turbo</h2>
+  <div class="old">Rp 199.000</div>
+  <div class="price">Rp 80.000</div>
+
+  <ul>
+    <li>✔ Semua fitur aktif</li>
+    <li>✔ Banyak karakter suara</li>
+    <li>✔ Cocok semua kebutuhan</li>
+    <li>✔ Akses update fitur</li>
+  </ul>
+
+  <a class="btn" href="https://wa.me/6285693623474" target="_blank">Coba Sekarang</a>
+</section>
+
+<!-- FORM -->
+<section>
+  <h2>Siap bikin suara profesional?</h2>
+
+  <form onsubmit="sendWA();return false;">
+    <input id="nama" placeholder="Nama" required>
+    <input id="alamat" placeholder="Alamat" required>
+    <input id="email" placeholder="Email" required>
+    <input id="wa" placeholder="No WhatsApp" required>
+    <textarea id="pesan" placeholder="Pesan"></textarea>
+    <button class="btn">Pesan Sekarang</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Voice Turbo
+</footer>
+
+<script>
+function sendWA(){
+  const n=nama.value,a=alamat.value,e=email.value,w=wa.value,p=pesan.value;
+  const text=`Halo Voice Turbo%0A%0ANama: ${n}%0AAlamat: ${a}%0AEmail: ${e}%0ANo WA: ${w}%0APesan: ${p}`;
+  window.open(`https://wa.me/6285693623474?text=${text}`,'_blank');
+}
+</script>
 
 </body>
 </html>
