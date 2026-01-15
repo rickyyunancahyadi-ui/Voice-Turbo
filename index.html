@@ -2,7 +2,9 @@
 <html lang="id" class="scroll-smooth" style="scroll-padding-top: 100px;">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <!-- Viewport optimized for all mobile devices including notched phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Voice Turbo - AI Voice Generator</title>
     <meta name="description" content="Ubah teks menjadi suara profesional tanpa rekam suara. Cepat, hemat, dan berkualitas studio.">
     
@@ -116,7 +118,7 @@
             display: none;
         }
 
-        /* Mobile Optimization */
+        /* Mobile Optimization: Remove tap highlight on mobile */
         * {
             -webkit-tap-highlight-color: transparent;
         }
@@ -190,20 +192,27 @@
             </div>
             
             <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight drop-shadow-sm">
-                Voice Over <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-white">Tanpa Rekam Suara</span>
+                Voice Over Instan <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-white">Untuk Iklan & Konten</span>
             </h1>
+
+            <!-- New Access Badge -->
+            <div class="mb-8 transform hover:scale-105 transition-transform duration-300">
+                <span class="inline-flex items-center px-6 py-2.5 rounded-full bg-gradient-to-r from-orange-500 to-pink-600 text-white font-bold text-sm md:text-base shadow-lg border border-white/30 tracking-wide uppercase">
+                    <i class="fa-solid fa-unlock-keyhole mr-2"></i> Sekali Bayar, Pakai Selamanya — Tanpa Ribet Mic / Talent
+                </span>
+            </div>
             
             <p class="text-2xl md:text-3xl font-semibold text-orange-100 mb-4 drop-shadow-sm">
-                Voice over cepat untuk konten & iklan.
+                Audio Siap Pakai, Tanpa Rekaman, Langsung Jualan.
             </p>
 
             <p class="mt-4 max-w-2xl mx-auto text-xl text-purple-100 mb-4 font-light">
-                Workflow cepat buat kreator yang fokus ke kualitas, bukan urusan teknis.
+                Jalan pintas membuat narasi video promosi yang menjual tanpa ribet urusan teknis.
             </p>
 
             <p class="max-w-3xl mx-auto text-lg text-white/90 mb-10 leading-relaxed">
-                Ubah teks, ide, foto, atau dokumen jadi suara profesional. Bebas rekam suara, hemat waktu dan biaya produksi.
+                Hasilkan suara kualitas studio dari teks dalam hitungan detik. Cocok untuk TikTok Shop, FB Ads, dan YouTube. Hemat waktu, hemat biaya, profit maksimal.
             </p>
             
             <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -252,7 +261,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Coba Keajaiban Suara</h2>
-                <p class="text-purple-100">Dengarkan preview langsung (Maks 200 kata, 15 detik).</p>
+                <p class="text-purple-100">Dengarkan preview langsung (Maks. 200 kata, 15 detik).</p>
             </div>
 
             <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
@@ -393,7 +402,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-3">Foto ke Suara</h3>
                     <p class="text-gray-600 leading-relaxed text-sm">
-                        Punya dokumen fisik atau screenshot buku? Unggah fotonya, dan teknologi OCR (Optical Character Recognition) kami akan mengekstrak teksnya secara instan lalu mengubahnya menjadi narasi audio.
+                        Punya dokumen fisik atau tangkapan layar buku? Unggah fotonya, dan teknologi OCR (Optical Character Recognition) kami akan mengekstrak teksnya secara instan lalu mengubahnya menjadi narasi audio.
                     </p>
                 </div>
 
@@ -445,52 +454,59 @@
                 <p class="text-purple-100">Dengarkan langsung kualitas audio profesional yang digunakan di berbagai konten viral.</p>
             </div>
 
-            <!-- Horizontal Scroll Container -->
-            <div class="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory px-4 md:px-0 scrollbar-hide" style="-webkit-overflow-scrolling: touch;">
+            <!-- Grid Layout (Vertical, 2 columns) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-0 justify-items-center">
                 
                 <!-- Reel 1 -->
-                <div class="flex-none w-[300px] h-[550px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 snap-center shadow-2xl">
+                <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DTNI3cykx7O/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
 
                 <!-- Reel 2 -->
-                <div class="flex-none w-[300px] h-[550px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 snap-center shadow-2xl">
+                <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DTOnwcok7Q9/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
 
                 <!-- Reel 3 -->
-                <div class="flex-none w-[300px] h-[550px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 snap-center shadow-2xl">
+                <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DTR6Qq3kz78/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
 
                 <!-- Reel 4 -->
-                <div class="flex-none w-[300px] h-[550px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 snap-center shadow-2xl">
+                <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DTU00lTE2_I/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
 
                 <!-- Reel 5 -->
-                <div class="flex-none w-[300px] h-[550px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 snap-center shadow-2xl">
+                <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DTVk4fSkyR3/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
 
                 <!-- Reel 6 -->
-                <div class="flex-none w-[300px] h-[550px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 snap-center shadow-2xl">
+                <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DTXlllME2Wl/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
 
                 <!-- Reel 7 -->
-                <div class="flex-none w-[300px] h-[550px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 snap-center shadow-2xl">
+                <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DTXdoagE8Ue/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
 
-            </div>
-            
-            <!-- Scroll Indicator -->
-            <div class="flex justify-center gap-2 mt-4 md:hidden">
-                <div class="w-2 h-2 rounded-full bg-white"></div>
-                <div class="w-2 h-2 rounded-full bg-white/30"></div>
-                <div class="w-2 h-2 rounded-full bg-white/30"></div>
-                <span class="text-xs text-white/70 ml-2">Geser untuk melihat lainnya</span>
+                <!-- Reel 8 (New) -->
+                <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+                    <iframe src="https://www.instagram.com/reel/DTii2R5kwz8/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </div>
+
+                <!-- Reel 9 (New) -->
+                <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+                    <iframe src="https://www.instagram.com/reel/DTg4T0OE6Cd/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </div>
+
+                <!-- Reel 10 (New) -->
+                <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+                    <iframe src="https://www.instagram.com/reel/DTfI0nME4I5/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                </div>
+
             </div>
         </div>
     </section>
@@ -582,66 +598,67 @@
             <!-- Single Pricing Card -->
             <div class="max-w-xl mx-auto relative group">
                 <!-- Glowing Background Effect -->
-                <div class="absolute -inset-1 bg-gradient-to-r from-orange-400 to-purple-400 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                <div class="absolute -inset-1.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-purple-600 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
                 
-                <div class="relative bg-white rounded-3xl p-8 md:p-12 overflow-hidden shadow-2xl">
+                <!-- Card Container -->
+                <div class="relative bg-gradient-to-br from-orange-50 via-white to-purple-50 rounded-3xl p-8 md:p-12 overflow-hidden shadow-2xl border-2 border-orange-400 ring-4 ring-orange-500/20">
                     
                     <!-- Badge -->
                     <div class="absolute top-0 right-0">
-                        <div class="bg-red-500 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl shadow-lg">PROMO TERBATAS</div>
+                        <div class="bg-gradient-to-r from-red-500 to-orange-600 text-white text-xs font-bold px-6 py-2 rounded-bl-xl shadow-lg uppercase tracking-wider">PROMO TERBATAS</div>
                     </div>
 
                     <!-- Countdown Timer -->
                     <div class="flex flex-col items-center justify-center mb-10">
-                        <span class="text-purple-600 text-xs font-bold uppercase tracking-[0.2em] mb-3 animate-pulse">Waktu Promo Tersisa</span>
-                        <div class="flex items-center gap-2 bg-gray-50 px-6 py-3 rounded-lg border border-gray-200 shadow-inner">
-                            <i class="fa-regular fa-clock text-purple-600 text-xl"></i>
+                        <span class="text-purple-700 text-xs font-bold uppercase tracking-[0.2em] mb-3 animate-pulse">Waktu Promo Tersisa</span>
+                        <div class="flex items-center gap-2 bg-white px-6 py-3 rounded-lg border border-orange-200 shadow-inner">
+                            <i class="fa-regular fa-clock text-orange-600 text-xl"></i>
                             <span id="promo-timer" class="text-3xl font-mono font-bold text-gray-900 tracking-widest">30:00</span>
                         </div>
                     </div>
 
-                    <div class="text-center mb-8 border-b border-gray-100 pb-8">
+                    <div class="text-center mb-8 border-b border-orange-100 pb-8">
                         <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Unlimited Lifetime</h3>
-                        <p class="text-gray-500 mb-6 font-light">Sekali bayar, nikmati akses tanpa batas selamanya.</p>
+                        <p class="text-gray-600 mb-6 font-light">Sekali bayar, nikmati akses tanpa batas selamanya.</p>
                         
                         <div class="flex flex-col items-center justify-center gap-1">
                             <div class="flex items-center gap-3">
-                                <span class="bg-red-100 text-red-600 px-2 py-0.5 rounded text-sm font-bold">-30% OFF</span>
+                                <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-bold border border-red-200">-30% OFF</span>
                                 <span class="text-lg text-gray-400 line-through">Rp 99.000</span>
                             </div>
-                            <span class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-500 mt-2">Rp 69.000</span>
+                            <span class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-purple-600 mt-2 filter drop-shadow-sm">Rp 69.000</span>
                             <span class="text-xs text-gray-500 font-medium uppercase tracking-wider mt-2">Tanpa Biaya Bulanan</span>
                         </div>
                     </div>
 
                     <!-- Features List -->
                     <ul class="space-y-4 mb-10">
-                        <li class="flex items-center text-gray-700 text-base">
+                        <li class="flex items-center text-gray-800 text-base font-medium">
                             <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3 text-green-600"><i class="fa-solid fa-check text-xs"></i></div>
                             <span>Akses <b>Unlimited</b> Selamanya</span>
                         </li>
                         <li class="flex items-center text-gray-700 text-base">
-                            <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3 text-green-600"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center mr-3 text-orange-600"><i class="fa-solid fa-check text-xs"></i></div>
                             <span>Akses 120+ Bahasa & 500+ Suara</span>
                         </li>
                         <li class="flex items-center text-gray-700 text-base">
-                            <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3 text-green-600"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center mr-3 text-orange-600"><i class="fa-solid fa-check text-xs"></i></div>
                             <span>Lisensi Komersial Penuh (YouTube/Ads)</span>
                         </li>
                         <li class="flex items-center text-gray-700 text-base">
-                            <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3 text-green-600"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center mr-3 text-orange-600"><i class="fa-solid fa-check text-xs"></i></div>
                             <span>Download High-Quality WAV</span>
                         </li>
                         <li class="flex items-center text-gray-700 text-base">
-                            <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3 text-green-600"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center mr-3 text-orange-600"><i class="fa-solid fa-check text-xs"></i></div>
                             <span>Support Prioritas 24/7</span>
                         </li>
                     </ul>
 
-                    <a href="https://wa.me/6285693623474?text=Halo%20Admin%20Voice%20Turbo,%20saya%20ingin%20klaim%20PROMO%20SPESIAL%20Unlimited%20Lifetime%20seharga%20Rp%2069.000.%20Mohon%20info%20pembayarannya." target="_blank" class="block w-full py-4 bg-gradient-to-r from-purple-600 to-orange-500 hover:from-purple-700 hover:to-orange-600 text-white text-center rounded-xl font-bold text-lg transition-all transform hover:scale-[1.02] shadow-xl shadow-orange-500/20">
+                    <a href="https://wa.me/6285693623474?text=Halo%20Admin%20Voice%20Turbo!%20%F0%9F%91%8B%20Saya%20beruntung%20banget%20lihat%20promo%20ini.%20Saya%20mau%20amankan%20akses%20*Unlimited%20Lifetime*%20seharga%20*Rp%2069.000*%20sebelum%20harganya%20naik%20kembali%20normal.%20Tolong%20bantu%20saya%20proses%20pembayarannya%20sekarang%20ya,%20saya%20sudah%20tidak%20sabar%20mau%20bikin%20konten%20viral!%20%F0%9F%9A%80" target="_blank" class="block w-full py-4 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white text-center rounded-xl font-bold text-lg transition-all transform hover:scale-[1.02] shadow-xl shadow-orange-500/30 border border-white/20">
                         Ambil Promo Sekarang <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
-                    <p class="text-center text-xs text-gray-400 mt-4">Garansi uang kembali 7 hari.</p>
+                    <p class="text-center text-xs text-gray-500 mt-4 font-medium">Garansi uang kembali 7 hari.</p>
                 </div>
             </div>
 
@@ -660,89 +677,6 @@
                 </div>
             </div>
 
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="relative z-10 py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Kata Mereka</h2>
-                <p class="text-purple-100">Bergabung dengan ribuan kreator yang puas.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial Cards -->
-                <div class="glass-card p-8 rounded-2xl flex flex-col h-full transition-all duration-300 hover:shadow-xl">
-                    <i class="fa-solid fa-quote-left text-4xl text-purple-100 absolute top-8 right-8"></i>
-                    <p class="text-gray-600 mb-6 relative z-10 font-light italic leading-relaxed">"Voice Turbo mengubah cara saya membuat konten YouTube. Dulu butuh seharian untuk voice over, sekarang cuma 5 menit. Kualitasnya gila!"</p>
-                    <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-orange-500 p-[2px]">
-                            <img src="https://ui-avatars.com/api/?name=Andi+Pratama&background=fff&color=a855f7" alt="User" class="w-full h-full rounded-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="text-gray-900 font-bold text-sm">Andi Pratama</h4>
-                            <p class="text-gray-500 text-xs">Content Creator</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="glass-card p-8 rounded-2xl flex flex-col h-full transition-all duration-300 hover:shadow-xl">
-                    <i class="fa-solid fa-quote-left text-4xl text-purple-100 absolute top-8 right-8"></i>
-                    <p class="text-gray-600 mb-6 relative z-10 font-light italic leading-relaxed">"Intonasi emosionalnya sangat membantu untuk materi e-learning kami. Siswa tidak bosan mendengarkan karena suaranya tidak monoton seperti robot."</p>
-                    <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-orange-500 p-[2px]">
-                            <img src="https://ui-avatars.com/api/?name=Sarah+Wijaya&background=fff&color=a855f7" alt="User" class="w-full h-full rounded-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="text-gray-900 font-bold text-sm">Sarah Wijaya</h4>
-                            <p class="text-gray-500 text-xs">E-Learning Specialist</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl flex flex-col h-full transition-all duration-300 hover:shadow-xl">
-                    <i class="fa-solid fa-quote-left text-4xl text-purple-100 absolute top-8 right-8"></i>
-                    <p class="text-gray-600 mb-6 relative z-10 font-light italic leading-relaxed">"Fitur kloning suara di paket Studio sangat worth it. Kami bisa mempertahankan brand voice konsisten di semua platform media sosial klien."</p>
-                    <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-orange-500 p-[2px]">
-                            <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=fff&color=a855f7" alt="User" class="w-full h-full rounded-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="text-gray-900 font-bold text-sm">Budi Santoso</h4>
-                            <p class="text-gray-500 text-xs">Agency Owner</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl flex flex-col h-full transition-all duration-300 hover:shadow-xl">
-                    <i class="fa-solid fa-quote-left text-4xl text-purple-100 absolute top-8 right-8"></i>
-                    <p class="text-gray-600 mb-6 relative z-10 font-light italic leading-relaxed">"Awalnya ragu, tapi setelah coba, engagement TikTok saya naik drastis. Suaranya beneran natural, ga kaku kayak robot Google Translate."</p>
-                    <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-orange-500 p-[2px]">
-                            <img src="https://ui-avatars.com/api/?name=Rina+Kusuma&background=fff&color=a855f7" alt="User" class="w-full h-full rounded-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="text-gray-900 font-bold text-sm">Rina Kusuma</h4>
-                            <p class="text-gray-500 text-xs">TikTok Affiliate</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card p-8 rounded-2xl flex flex-col h-full transition-all duration-300 hover:shadow-xl">
-                    <i class="fa-solid fa-quote-left text-4xl text-purple-100 absolute top-8 right-8"></i>
-                    <p class="text-gray-600 mb-6 relative z-10 font-light italic leading-relaxed">"Sangat membantu buat podcaster solo kayak saya. Bisa bikin episode baru lebih cepat tanpa harus take vokal berulang-ulang kalau salah ngomong."</p>
-                    <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-500 to-orange-500 p-[2px]">
-                            <img src="https://ui-avatars.com/api/?name=Dimas+Anggara&background=fff&color=a855f7" alt="User" class="w-full h-full rounded-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="text-gray-900 font-bold text-sm">Dimas Anggara</h4>
-                            <p class="text-gray-500 text-xs">Podcaster</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -875,18 +809,18 @@
     <!-- CTA / Order Section -->
     <section class="relative z-10 py-20 overflow-hidden bg-black/20 backdrop-blur-md border-t border-white/10">
         <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Siap Mengubah Konten Anda?</h2>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ambil sekarang dan dapatkan garansi 7 hari</h2>
             <p class="text-xl text-purple-100 mb-10 max-w-2xl mx-auto">
                 Jangan biarkan kualitas audio menghambat pertumbuhan Anda. Konsultasikan kebutuhan Anda atau pesan paket langsung sekarang.
             </p>
             
-            <a href="https://wa.me/6285693623474?text=Halo%20Admin%20Voice%20Turbo,%20saya%20tertarik%20untuk%20memesan%20Voice%20Turbo.%20Mohon%20bantuan%20untuk%20pemesanannya." target="_blank" class="inline-flex items-center justify-center px-8 py-5 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full text-lg transition-all transform hover:scale-105 shadow-xl shadow-green-500/30 gap-3 group">
+            <a href="https://wa.me/6285693623474?text=Halo%20Admin%20Voice%20Turbo!%20%F0%9F%91%8B%20Saya%20siap%20mengubah%20kualitas%20konten%20saya%20jadi%20level%20studio.%20Saya%20tertarik%20memesan%20dan%20ingin%20dapat%20*Garansi%207%20Hari*-nya.%20Tolong%20info%20cara%20mulainya%20ya,%20saya%20ingin%20segera%20produktif%20tanpa%20ribet%20rekaman%20lagi!%20%F0%9F%94%A5" target="_blank" class="inline-flex items-center justify-center px-8 py-5 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full text-lg transition-all transform hover:scale-105 shadow-xl shadow-green-500/30 gap-3 group">
                 <i class="fa-brands fa-whatsapp text-2xl group-hover:animate-bounce"></i>
                 <span>Pesan Sekarang via WhatsApp</span>
             </a>
             
-            <p class="mt-6 text-sm text-white/70">
-                <i class="fa-solid fa-clock mr-1"></i> Respon cepat Senin - Jumat, 09.00 - 17.00
+            <p class="mt-6 text-sm text-white/80 font-medium">
+                <i class="fa-solid fa-bolt mr-1 text-yellow-400"></i> Admin Fast Response 24/7. Tidak perlu menunggu jam kerja, order langsung diproses detik ini juga!
             </p>
         </div>
     </section>
@@ -991,7 +925,9 @@
             }
 
             // Stop any playing audio immediately
-            window.speechSynthesis.cancel();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
             clearTimeout(demoTimeout);
             clearInterval(timerInterval);
 
@@ -1001,6 +937,12 @@
             btn.disabled = true;
             btnText.innerText = 'Memproses...';
             icon.className = 'fa-solid fa-spinner fa-spin';
+
+            if (!('speechSynthesis' in window)) {
+                alert("Maaf, browser Anda tidak mendukung fitur ini.");
+                stopDemo();
+                return;
+            }
 
             // Create Utterance
             const utterance = new SpeechSynthesisUtterance(text);
@@ -1120,7 +1062,9 @@
         }
 
         function stopDemo() {
-            window.speechSynthesis.cancel();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
             clearTimeout(demoTimeout);
             clearInterval(timerInterval);
 
@@ -1172,11 +1116,13 @@
 
         // Preload voices properly across browsers
         function loadVoices() {
-            window.speechSynthesis.getVoices();
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
         }
         
         loadVoices();
-        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+        if (typeof window !== 'undefined' && window.speechSynthesis && window.speechSynthesis.onvoiceschanged !== undefined) {
             window.speechSynthesis.onvoiceschanged = loadVoices;
         }
 
