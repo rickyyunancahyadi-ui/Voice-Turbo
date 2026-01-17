@@ -1130,5 +1130,61 @@
         window.addEventListener('load', startPromoTimer);
 
     </script>
+    <!-- Voice Turbo Demo -->
+<div style="margin-top:16px;">
+  <select id="voiceCharacter">
+    <option value="laura">Laura — Antusias & Unik</option>
+    <option value="eric">Eric — Smooth & Trustworthy</option>
+  </select>
+
+  <button onclick="playVoiceDemo()">▶️ Play Demo</button>
+  <audio id="voicePlayer" style="display:none;"></audio>
+</div>
+
+<script>
+async function playVoiceDemo() {
+  const character = document.getElementById("voiceCharacter").value;
+  const player = document.getElementById("voicePlayer");
+
+  const VOICES = {
+    laura: {
+      voiceId: "FGY2WhTYpPnrIDTdsKH5",
+      text: "Hai! Aku Laura. Aku siap bantu kamu bikin suara yang antusias, unik, dan bikin orang langsung tertarik."
+    },
+    eric: {
+      voiceId: "cjVigY5qzO86Huf0OWal",
+      text: "Halo. Saya Eric. Saya membantu Anda menghasilkan suara yang tenang, profesional, dan bisa dipercaya."
+    }
+  };
+
+  try {
+    const res = await fetch(
+      `https://api.elevenlabs.io/v1/text-to-speech/${VOICES[character].voiceId}`,
+      {
+        method: "POST",
+        headers: {
+          "xi-api-key": "sk_819d0c99ad9b3d9e99f3098625760fd774320090f57cf5f9",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          text: VOICES[character].text,
+          model_id: "eleven_monolingual_v1"
+        })
+      }
+    );
+
+    if (!res.ok) throw new Error("Gagal generate suara");
+
+    const audioBlob = await res.blob();
+    player.src = URL.createObjectURL(audioBlob);
+    player.style.display = "block";
+    player.play();
+  } catch (e) {
+    alert("Demo suara gagal. Cek API key & koneksi.");
+    console.error(e);
+  }
+}
+</script>
+
 </body>
 </html>
