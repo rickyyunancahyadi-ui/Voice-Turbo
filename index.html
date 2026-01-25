@@ -533,16 +533,16 @@
                     </div>
 
                     <!-- Countdown Timer -->
-                    <div class="flex flex-col items-center justify-center mb-8">
-                        <span class="text-purple-700 text-xs font-bold uppercase tracking-[0.2em] mb-3 animate-pulse">Sisa Waktu Promo</span>
-                        <div class="flex items-center gap-2 bg-white px-5 py-2 rounded-lg border border-red-200 shadow-inner">
-                            <i class="fa-regular fa-clock text-red-500 text-lg"></i>
-                            <span id="promo-timer" class="text-2xl font-mono font-bold text-red-600 tracking-widest">24:00:00</span>
+                    <div class="flex flex-col items-center justify-center mb-10">
+                        <span class="text-purple-700 text-xs font-bold uppercase tracking-[0.2em] mb-3 animate-pulse">Waktu Promo Tersisa</span>
+                        <div class="flex items-center gap-2 bg-white px-6 py-3 rounded-lg border border-orange-200 shadow-inner">
+                            <i class="fa-regular fa-clock text-orange-600 text-xl"></i>
+                            <!-- Updated initial placeholder to match HH:MM:SS format -->
+                            <span id="promo-timer" class="text-3xl font-mono font-bold text-gray-900 tracking-widest">--:--:--</span>
                         </div>
                     </div>
 
-                    <div class="text-center mb-6 border-b border-orange-100 pb-8">
-                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Unlimited Lifetime</h3>
+                    <div class="text-center mb-8 border-b border-orange-100 pb-8">
                         <p class="text-gray-500 mb-6 font-light">Akses penuh selamanya. Tanpa biaya langganan.</p>
                         
                         <div class="flex flex-col items-center justify-center gap-1">
@@ -810,30 +810,280 @@
             menu.classList.toggle('hidden');
         }
 
-        // Start Promo Timer
+        // Initialize Visualizer Bars (Wrapped in DOMContentLoaded)
         document.addEventListener('DOMContentLoaded', () => {
+            const visualizer = document.getElementById('visualizer');
+            if (visualizer) { 
+                for (let i = 0; i < 20; i++) {
+                    const bar = document.createElement('div');
+                    bar.className = 'bar w-1.5 bg-gradient-to-t from-orange-500 to-purple-600 rounded-full h-2 mx-0.5 opacity-50';
+                    bar.style.height = Math.floor(Math.random() * 40 + 10) + '%'; 
+                    visualizer.appendChild(bar);
+                }
+            }
+            
+            // Start Promo Timer
+            startPromoTimer();
+        });
+
+        // --- REAL SPEECH SYNTHESIS LOGIC ---
+        
+        let demoTimeout;
+        let timerInterval;
+
+        function updateWordCount() {
+            const text = document.getElementById('demo-input').value;
+            const words = text.trim().split(/\s+/).filter(word => word.length > 0).length;
+            const counter = document.getElementById('word-count');
+            const errorMsg = document.getElementById('error-msg');
+            const btn = document.getElementById('generate-btn');
+
+            counter.innerText = words + "/200 Kata";
+            
+            if (words > 200) {
+                counter.classList.add('text-red-500');
+                errorMsg.innerText = "Teks melebihi batas 200 kata untuk demo.";
+                errorMsg.classList.remove('hidden');
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                counter.classList.remove('text-red-500');
+                errorMsg.classList.add('hidden');
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        function playDemo() {
+            const text = document.getElementById('demo-input').value;
+            const btn = document.getElementById('generate-btn');
+            const btnText = btn.querySelector('span');
+            const icon = btn.querySelector('i');
+            const status = document.getElementById('status-text');
+            const visualizerContainer = document.getElementById('visualizer');
+            const voiceSelect = document.getElementById('voice-select').value;
+            
+            if (!text.trim()) {
+                alert("Silakan masukkan teks terlebih dahulu.");
+                return;
+            }
+
+            // Stop any playing audio immediately
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
+            clearTimeout(demoTimeout);
+            clearInterval(timerInterval);
+
+            // Setup UI
+            status.style.opacity = '1';
+            status.innerText = 'Memuat suara...';
+            btn.disabled = true;
+            btnText.innerText = 'Memproses...';
+            icon.className = 'fa-solid fa-spinner fa-spin';
+
+            if (!('speechSynthesis' in window)) {
+                alert("Maaf, browser Anda tidak mendukung fitur ini.");
+                stopDemo();
+                return;
+            }
+
+            // Create Utterance
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'id-ID'; // Force Indonesian
+            utterance.volume = 1.0; // Max volume for clarity
+
+            // Get available voices
+            const voices = window.speechSynthesis.getVoices();
+            
+            // Filter Indonesian voices. Some browsers use 'id_ID', some 'id-ID'
+            let idVoices = voices.filter(v => v.lang.replace('_', '-').includes('id-ID'));
+            
+            // Fallback if no ID voice found (use generic 'id' or english as last resort)
+            if (idVoices.length === 0) {
+                idVoices = voices.filter(v => v.lang.includes('id') || v.lang.includes('en'));
+            }
+
+            let selectedVoice = null;
+
+            // --- KARAKTER SUARA YANG LEBIH PRESISI ---
+            
+            if (voiceSelect === 'daniel') {
+                // Daniel: Steady Broadcaster (Wibawa, Berat, Tenang)
+                
+                // 1. Cari suara yang mengandung kata 'male', 'pria', atau 'cowok'
+                selectedVoice = idVoices.find(v => 
+                    v.name.toLowerCase().includes('male') || 
+                    v.name.toLowerCase().includes('pria') ||
+                    v.name.toLowerCase().includes('david') || 
+                    v.name.toLowerCase().includes('rizwan')
+                );
+
+                // Tuning Audio Daniel:
+                // Pitch rendah (0.7) untuk efek suara berat/maskulin
+                // Rate lambat (0.85) untuk efek wibawa/broadcaster
+                utterance.pitch = 0.7; 
+                utterance.rate = 0.85;   
+
+            } else if (voiceSelect === 'jesica') {
+                // Jesica: Playful, Bright, Warm (Ceria, Terang, Ramah)
+                
+                // 1. Cari suara yang mengandung kata 'female', 'wanita', 'google', atau 'siti'
+                // Prioritas Google Voice karena biasanya wanita dan kualitasnya bagus di Chrome Android
+                selectedVoice = idVoices.find(v => 
+                    v.name.toLowerCase().includes('google') ||
+                    v.name.toLowerCase().includes('female') || 
+                    v.name.toLowerCase().includes('wanita') ||
+                    v.name.toLowerCase().includes('gadis')
+                );
+
+                // Tuning Audio Jesica:
+                // Pitch tinggi (1.2) untuk efek suara wanita/ceria
+                // Rate cepat (1.1) untuk efek antusias/playful
+                utterance.pitch = 1.2; 
+                utterance.rate = 1.1;  
+            }
+
+            // Jika tidak menemukan voice spesifik gender, pakai suara default bahasa tersebut
+            // tapi TETAP aplikasikan pitch/rate di atas untuk membedakan karakter.
+            if (!selectedVoice && idVoices.length > 0) {
+                selectedVoice = idVoices[0];
+            }
+
+            if (selectedVoice) {
+                utterance.voice = selectedVoice;
+            }
+
+            // Events
+            utterance.onstart = function() {
+                status.innerText = 'Sedang dimainkan...';
+                visualizerContainer.classList.add('animate-sound');
+                btn.disabled = false;
+                btnText.innerText = 'Berhenti';
+                icon.className = 'fa-solid fa-stop';
+                btn.onclick = stopDemo;
+
+                // Start Visual Timer
+                let timeLeft = 15; // Set max duration preview
+                const timeDisplay = document.getElementById('time-display');
+                const progressBar = document.getElementById('progress-bar');
+                progressBar.style.width = '0%';
+                
+                // Kalkulasi durasi perkiraan berdasarkan panjang teks & kecepatan bicara
+                // Rata-rata 1 kata = 0.5 detik pada speed normal.
+                // Kita gunakan timer visual saja untuk efek demo.
+                
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    // Update progress bar visual (approximate)
+                    const percentage = ((15 - timeLeft) / 15) * 100;
+                    progressBar.style.width = Math.min(percentage, 100) + '%';
+                    
+                    timeDisplay.innerText = `00:${Math.max(0, 15 - timeLeft).toString().padStart(2, '0')}`;
+                    
+                    if (timeLeft <= 0) {
+                        stopDemo(); // Stop after 15s limit
+                    }
+                }, 1000);
+
+                // Hard stop limit
+                demoTimeout = setTimeout(() => {
+                    stopDemo();
+                }, 15000);
+            };
+
+            utterance.onend = stopDemo;
+            
+            utterance.onerror = function(e) {
+                console.error("Speech Error:", e);
+                // Jangan tampilkan error mencolok ke user, cukup reset tombol
+                stopDemo();
+                status.innerText = 'Selesai / Terhenti.';
+            };
+
+            // Speak
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function stopDemo() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
+            clearTimeout(demoTimeout);
+            clearInterval(timerInterval);
+
+            const btn = document.getElementById('generate-btn');
+            const btnText = btn.querySelector('span');
+            const icon = btn.querySelector('i');
+            const status = document.getElementById('status-text');
+            const visualizerContainer = document.getElementById('visualizer');
+            const progressBar = document.getElementById('progress-bar');
+            const timeDisplay = document.getElementById('time-display');
+
+            visualizerContainer.classList.remove('animate-sound');
+            
+            // Reset UI
+            status.style.opacity = '0';
+            icon.className = 'fa-solid fa-play';
+            btnText.innerText = 'Play Demo';
+            btn.disabled = false;
+            btn.onclick = playDemo;
+            
+            progressBar.style.width = '0%';
+            timeDisplay.innerText = '00:00';
+        }
+
+        // PROMO TIMER FUNCTION (UPDATED)
+        function startPromoTimer() {
             const timerElement = document.getElementById('promo-timer');
             if (!timerElement) return;
 
-            let time = 30 * 60; 
+            // Set Target: Tanggal 26 Januari (Tahun Saat Ini) Pukul 23:50:00
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const countDownDate = new Date(`Jan 26, ${currentYear} 23:50:00`).getTime();
 
             const timerInterval = setInterval(() => {
-                const minutes = Math.floor(time / 60);
-                let seconds = time % 60;
-                seconds = seconds < 10 ? '0' + seconds : seconds;
-                let displayMinutes = minutes < 10 ? '0' + minutes : minutes;
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
 
-                timerElement.textContent = `${displayMinutes}:${seconds}`;
-
-                if (time > 0) {
-                    time--;
-                } else {
+                if (distance < 0) {
                     clearInterval(timerInterval);
-                    timerElement.textContent = "00:00";
+                    timerElement.textContent = "00:00:00";
                     timerElement.classList.add('text-red-500');
+                    // Optional: Bisa tambahkan teks "Promo Berakhir" di sini
+                    return;
                 }
+
+                // Kalkulasi Jam, Menit, Detik
+                const hours = Math.floor(distance / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Format dengan leading zero (01, 02, dll)
+                const displayHours = hours < 10 ? '0' + hours : hours;
+                const displayMinutes = minutes < 10 ? '0' + minutes : minutes;
+                const displaySeconds = seconds < 10 ? '0' + seconds : seconds;
+
+                timerElement.textContent = `${displayHours}:${displayMinutes}:${displaySeconds}`;
             }, 1000);
-        });
+        }
+
+        // Preload voices properly across browsers
+        function loadVoices() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        }
+        
+        loadVoices();
+        if (typeof window !== 'undefined' && window.speechSynthesis && window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+        }
+
+        // Start timer when page loads
+        window.addEventListener('load', startPromoTimer);
+
     </script>
 </body>
 </html>
