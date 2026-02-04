@@ -2,13 +2,12 @@
 <html lang="id" class="scroll-smooth" style="scroll-padding-top: 100px;">
 <head>
     <meta charset="UTF-8">
-    <!-- Viewport optimized for all mobile devices including notched phones -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Voice Turbo - AI Voice Generator</title>
     <meta name="description" content="Ubah teks menjadi suara profesional tanpa rekam suara. Cepat, hemat, dan berkualitas studio.">
     
-    <!-- Open Graph for Social Media/Ads Previews -->
+    <!-- Open Graph Data -->
     <meta property="og:title" content="Voice Turbo - AI Voice Generator">
     <meta property="og:description" content="Buat voice over profesional instan. Tanpa mic, hasil natural.">
     <meta property="og:type" content="website">
@@ -24,7 +23,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Tailwind Setup Function -->
+    <!-- Tailwind Configuration -->
     <script>
         function setupTailwind() {
             if (typeof tailwind !== 'undefined') {
@@ -38,13 +37,13 @@
                                 brand: {
                                     50: '#fff7ed',
                                     100: '#ffedd5',
-                                    500: '#f97316', // Orange accent
+                                    500: '#f97316',
                                     600: '#ea580c',
                                     900: '#7c2d12',
                                 },
                                 purple: {
-                                    900: '#4c1d95', // Violet 900
-                                    800: '#5b21b6', // Violet 800
+                                    900: '#4c1d95',
+                                    800: '#5b21b6',
                                 }
                             },
                             animation: {
@@ -66,11 +65,10 @@
         }
     </script>
     
-    <!-- Tailwind CSS (Load and trigger setup) -->
+    <!-- Tailwind CSS Load -->
     <script src="https://cdn.tailwindcss.com" onload="setupTailwind()"></script>
 
     <style>
-        /* Custom Utilities - Light Theme for Cards */
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
@@ -79,7 +77,6 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
         
-        /* White Card Style */
         .glass-card {
             background: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.8);
@@ -87,12 +84,11 @@
         }
 
         .text-gradient {
-            background: linear-gradient(to right, #fb923c, #fb7185, #c084fc); /* Orange to Pink to Purple */
+            background: linear-gradient(to right, #fb923c, #fb7185, #c084fc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Audio Wave Animation */
         .bar {
             width: 6px;
             background: linear-gradient(to top, #f97316, #d946ef);
@@ -110,7 +106,6 @@
             100% { height: 100%; opacity: 1; }
         }
 
-        /* FAQ Details Animation */
         details > summary {
             list-style: none;
         }
@@ -118,7 +113,6 @@
             display: none;
         }
 
-        /* Mobile Optimization: Remove tap highlight on mobile */
         * {
             -webkit-tap-highlight-color: transparent;
         }
@@ -152,7 +146,7 @@
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#features" class="text-gray-600 hover:text-orange-600 transition-colors px-3 py-2 text-sm font-medium">Fitur</a>
                         <a href="#pricing" class="text-gray-600 hover:text-orange-600 transition-colors px-3 py-2 text-sm font-medium">Harga</a>
-                        <!-- Testimonials link removed -->
+                        <a href="#testimonials" class="text-gray-600 hover:text-orange-600 transition-colors px-3 py-2 text-sm font-medium">Testimoni</a>
                         <a href="#faq" class="text-gray-600 hover:text-orange-600 transition-colors px-3 py-2 text-sm font-medium">FAQ</a>
                     </div>
                 </div>
@@ -178,7 +172,7 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#features" class="text-gray-700 hover:text-orange-600 block px-3 py-2 rounded-md text-base font-medium">Fitur</a>
                 <a href="#pricing" class="text-gray-700 hover:text-orange-600 block px-3 py-2 rounded-md text-base font-medium">Harga</a>
-                <!-- Testimonials link removed -->
+                <a href="#testimonials" class="text-gray-700 hover:text-orange-600 block px-3 py-2 rounded-md text-base font-medium">Testimoni</a>
                 <a href="#pricing" class="bg-gradient-to-r from-purple-600 to-orange-500 text-white block px-3 py-2 rounded-md text-base font-medium mt-4 text-center">Coba Sekarang</a>
             </div>
         </div>
@@ -192,13 +186,11 @@
                 Teknologi AI Suara Generasi Terbaru v2.0
             </div>
             
-            <!-- Headline -->
             <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-6 leading-snug drop-shadow-sm">
                 Bikin suara profesional untuk konten & iklan <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-white">cuma dari teks — tanpa mic, tanpa ribet.</span>
             </h1>
 
-            <!-- Access Badge -->
             <div class="mb-8 transform hover:scale-105 transition-transform duration-300">
                 <span class="inline-flex items-center px-5 py-2 rounded-full bg-gradient-to-r from-orange-500 to-pink-600 text-white font-semibold text-sm md:text-base shadow-lg border border-white/30 tracking-wide uppercase">
                     <i class="fa-solid fa-unlock-keyhole mr-2"></i> Sekali Bayar, Pakai Selamanya — Tanpa Ribet Mic / Talent
@@ -208,17 +200,21 @@
             <p class="text-xl md:text-2xl font-semibold text-orange-100 mb-4 drop-shadow-sm">
                 Audio Siap Pakai, Tanpa Rekaman, Langsung Jualan.
             </p>
-
-            <p class="mt-4 max-w-2xl mx-auto text-xl text-purple-100 mb-8 font-light">
-                Workflow cepat buat kreator yang fokus ke kualitas, bukan urusan teknis.
-            </p>
-
             <!-- Highlighted Sub-headline (Cover Effect) -->
             <div class="max-w-3xl mx-auto mb-10">
                 <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-xl transform hover:scale-[1.02] transition-transform duration-300">
                     <p class="text-base md:text-lg text-white leading-relaxed font-medium">
                         "Hasilkan suara konsisten dari detik awal hingga detik terakhir. Generate berulang dengan karakter dan setting yang sama, hasilnya kami pastikan selalu sama."
                     </p>
+                </div>
+            </div>
+
+            <!-- Hero Image (Full Image Display) -->
+            <div class="flex justify-center mb-12 px-4">
+                <div class="w-full max-w-4xl rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-[#4c1d95] group">
+                    <img src="https://image2url.com/r2/default/images/1770202473481-acd44358-4447-4aee-89e0-ee22ca0f1f91.png" 
+                         alt="Voice Turbo Dashboard Preview" 
+                         class="w-full h-auto group-hover:scale-105 transition-transform duration-1000 ease-out">
                 </div>
             </div>
             
@@ -259,7 +255,7 @@
         </div>
     </section>
 
-    <!-- Use Cases / Benefits Section -->
+    <!-- Use Cases Section -->
     <section class="relative z-10 py-24 bg-gradient-to-bl from-slate-900 via-blue-950/20 to-slate-900 border-t border-slate-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -280,7 +276,6 @@
                         Hemat waktu rekaman dan editing. Hasilkan narasi video berkualitas studio dalam hitungan detik agar Anda bisa fokus pada visual dan storytelling.
                     </p>
                 </div>
-
                 <!-- Card 2 -->
                 <div class="glass-card p-6 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
                     <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
@@ -291,7 +286,6 @@
                         Buat audio untuk presentasi produk, profil perusahaan, atau IVR (telepon otomatis) profesional tanpa perlu menyewa pengisi suara mahal.
                     </p>
                 </div>
-
                 <!-- Card 3 -->
                 <div class="glass-card p-6 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
                     <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
@@ -302,7 +296,6 @@
                         Ubah materi teks menjadi modul pembelajaran audio yang menarik. Tingkatkan aksesibilitas dan pemahaman siswa dengan suara yang jelas.
                     </p>
                 </div>
-
                 <!-- Card 4 -->
                 <div class="glass-card p-6 rounded-2xl hover:-translate-y-1 transition-transform duration-300">
                     <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
@@ -331,7 +324,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Method 1 -->
+                <!-- Methods Cards -->
                 <div class="glass-card p-8 rounded-2xl transition-all duration-300 group">
                     <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-keyboard text-2xl text-purple-600"></i>
@@ -341,8 +334,6 @@
                         Metode klasik dan presisi. Cukup ketik atau tempel (paste) naskah Anda ke dalam editor. Anda memiliki kendali penuh atas tanda baca, jeda, dan penekanan kata untuk hasil yang 100% akurat.
                     </p>
                 </div>
-
-                <!-- Method 2 -->
                 <div class="glass-card p-8 rounded-2xl transition-all duration-300 group">
                     <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-camera text-2xl text-pink-500"></i>
@@ -352,8 +343,6 @@
                         Punya dokumen fisik atau tangkapan layar buku? Unggah fotonya, dan teknologi OCR (Optical Character Recognition) kami akan mengekstrak teksnya secara instan lalu mengubahnya menjadi narasi audio.
                     </p>
                 </div>
-
-                <!-- Method 3 -->
                 <div class="glass-card p-8 rounded-2xl transition-all duration-300 group">
                     <div class="w-14 h-14 bg-yellow-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-lightbulb text-2xl text-yellow-500"></i>
@@ -363,8 +352,6 @@
                         Buntu ide? Cukup masukkan topik kasar (contoh: "Manfaat Kopi"). AI Generatif kami akan menuliskan naskah lengkap yang menarik, lalu otomatis membacakannya untuk Anda.
                     </p>
                 </div>
-
-                <!-- Method 4 -->
                 <div class="glass-card p-8 rounded-2xl transition-all duration-300 group">
                     <div class="w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-wand-magic-sparkles text-2xl text-indigo-500"></i>
@@ -374,8 +361,6 @@
                         Ciptakan efek suara atau gaya bicara spesifik lewat deskripsi. Ketik prompt seperti "Seorang kakek tua berbisik misterius di gua", dan AI akan menghasilkan suara dengan tekstur dan emosi yang sesuai.
                     </p>
                 </div>
-
-                <!-- Method 5 -->
                 <div class="glass-card p-8 rounded-2xl transition-all duration-300 group md:col-span-2 lg:col-span-2">
                     <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
                         <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -401,49 +386,34 @@
                 <p class="text-purple-100">Dengarkan langsung kualitas audio profesional yang digunakan di berbagai konten viral.</p>
             </div>
 
-            <!-- Grid Layout (Vertical, 2 columns) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-0 justify-items-center">
-                
-                <!-- Reel 1 -->
+                <!-- Instagram Embeds -->
                 <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DULTB4tE503/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
-
-                <!-- Reel 2 -->
                 <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DUJxxp0k8Qo/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
-
-                <!-- Reel 3 -->
                 <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DUFrznukz8I/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
-
-                <!-- Reel 4 -->
                 <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DTxHHsGEw-X/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
-
-                <!-- Reel 5 -->
                 <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DTnU7OFkzr_/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
-
-                <!-- Reel 6 -->
                 <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
                     <iframe src="https://www.instagram.com/reel/DTii2R5kwz8/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
-
-                <!-- Reel 7 -->
-                <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
+                <div class="w-full max-w-[320px] h-[580px] bg-gray-900 rounded-2xl overflow-hidden border border-white/20 shadow-2xl md:col-span-2">
                     <iframe src="https://www.instagram.com/reel/DT_yjr7k6SQ/embed" class="w-full h-full object-cover" loading="lazy" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features Section (Why Voice Turbo) -->
     <section id="features" class="relative z-10 py-24 bg-gradient-to-b from-slate-900 to-emerald-950/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -451,9 +421,8 @@
                 <p class="text-purple-100 max-w-2xl mx-auto">Alasan mengapa ribuan kreator beralih menggunakan teknologi kami.</p>
             </div>
 
-            <!-- Grid Layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-                <!-- Feature 1 -->
+                <!-- Feature Cards -->
                 <div class="glass-card p-8 rounded-2xl transition-all duration-300 group lg:col-span-2 border border-slate-700/50 hover:border-yellow-500/50">
                     <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-yellow-500/5">
                         <i class="fa-solid fa-face-smile-beam text-2xl text-yellow-500"></i>
@@ -463,8 +432,6 @@
                         Jangan biarkan naskah brilian Anda terdengar membosankan seperti robot. AI kami menyuntikkan emosi dan penekanan yang tepat agar ide Anda tersampaikan dengan "nyawa".
                     </p>
                 </div>
-
-                <!-- Feature 2 -->
                 <div class="glass-card p-8 rounded-2xl transition-all duration-300 group lg:col-span-2 border border-slate-700/50 hover:border-green-500/50">
                     <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-green-500/5">
                         <i class="fa-solid fa-coins text-2xl text-green-500"></i>
@@ -474,8 +441,6 @@
                         Lupakan biaya sewa studio mahal atau menunggu freelancer berhari-hari. Dapatkan kualitas audio setara studio profesional dengan fraksi biaya dan dalam hitungan detik.
                     </p>
                 </div>
-
-                <!-- Feature 3 -->
                 <div class="glass-card p-8 rounded-2xl transition-all duration-300 group lg:col-span-2 border border-slate-700/50 hover:border-pink-500/50">
                     <div class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-pink-500/5">
                         <i class="fa-solid fa-ear-listen text-2xl text-pink-500"></i>
@@ -485,8 +450,6 @@
                         Retensi adalah raja. Karakter suara kami yang natural dan enak didengar terbukti meningkatkan <i>watch time</i> dan menjaga audiens tetap terikat pada konten Anda.
                     </p>
                 </div>
-
-                <!-- Feature 4 -->
                 <div class="glass-card p-8 rounded-2xl transition-all duration-300 group lg:col-span-3 border border-slate-700/50 hover:border-blue-500/50">
                     <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
                         <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/5">
@@ -500,8 +463,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Feature 5 -->
                 <div class="glass-card p-8 rounded-2xl transition-all duration-300 group lg:col-span-3 border border-slate-700/50 hover:border-purple-500/50">
                      <div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
                         <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg shadow-purple-500/5">
@@ -523,42 +484,45 @@
     <section id="pricing" class="relative z-10 py-24 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/50 via-slate-900 to-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Penawaran Spesial</h2>
-                <p class="text-purple-100 text-lg">Ambil kesempatan langka ini sebelum waktu habis.</p>
+                <div class="inline-block px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-500 text-blue-400 font-bold text-sm mb-4 animate-pulse">
+                    🌙 PROMO BERKAH RAMADHAN
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Promo Spesial Bulan Suci</h2>
+                <p class="text-purple-100 text-lg">Investasi cerdas untuk konten Anda di bulan penuh berkah.</p>
             </div>
 
             <!-- Single Pricing Card -->
             <div class="max-w-xl mx-auto relative group">
                 <!-- Glowing Background Effect -->
-                <div class="absolute -inset-1.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-purple-600 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+                <div class="absolute -inset-1.5 bg-gradient-to-r from-blue-400 via-indigo-500 to-cyan-600 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
                 
                 <!-- Card Container -->
-                <div class="relative bg-gradient-to-br from-orange-50 via-white to-purple-50 rounded-3xl p-8 md:p-12 overflow-hidden shadow-2xl border-2 border-orange-400 ring-4 ring-orange-500/20">
+                <div class="relative bg-gradient-to-br from-blue-50 via-white to-indigo-50 rounded-3xl p-8 md:p-12 overflow-hidden shadow-2xl border-2 border-blue-400 ring-4 ring-blue-500/20">
                     
                     <!-- Badge -->
                     <div class="absolute top-0 right-0">
-                        <div class="bg-gradient-to-r from-red-500 to-orange-600 text-white text-xs font-bold px-6 py-2 rounded-bl-xl shadow-lg uppercase tracking-wider">PROMO TERBATAS</div>
+                        <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-6 py-2 rounded-bl-xl shadow-lg uppercase tracking-wider">HARGA SPESIAL</div>
                     </div>
 
                     <!-- Countdown Timer -->
                     <div class="flex flex-col items-center justify-center mb-10">
-                        <span class="text-purple-700 text-xs font-bold uppercase tracking-[0.2em] mb-3 animate-pulse">Waktu Promo Tersisa</span>
-                        <div class="flex items-center gap-2 bg-white px-6 py-3 rounded-lg border border-orange-200 shadow-inner">
-                            <i class="fa-regular fa-clock text-orange-600 text-xl"></i>
-                            <span id="promo-timer" class="text-3xl font-mono font-bold text-gray-900 tracking-widest">30:00</span>
+                        <span class="text-indigo-700 text-xs font-bold uppercase tracking-[0.2em] mb-3 animate-pulse">Sisa Waktu Promo</span>
+                        <div class="flex items-center gap-2 bg-white px-6 py-3 rounded-lg border border-blue-200 shadow-inner">
+                            <i class="fa-regular fa-clock text-blue-600 text-xl"></i>
+                            <span id="promo-timer" class="text-3xl font-mono font-bold text-gray-900 tracking-widest">00:00:00:00</span>
                         </div>
                     </div>
 
-                    <div class="text-center mb-8 border-b border-orange-100 pb-8">
+                    <div class="text-center mb-8 border-b border-blue-100 pb-8">
                         <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Unlimited Lifetime</h3>
                         <p class="text-gray-500 mb-6 font-light">Sekali bayar, nikmati akses tanpa batas selamanya.</p>
                         
                         <div class="flex flex-col items-center justify-center gap-1">
                             <div class="flex items-center gap-3">
-                                <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-bold border border-red-200">-30% OFF</span>
+                                <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-bold border border-red-200">HEMAT 40RB</span>
                                 <span class="text-lg text-gray-400 line-through">Rp 99.000</span>
                             </div>
-                            <span class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-purple-600 mt-2 filter drop-shadow-sm">Rp 69.000</span>
+                            <span class="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mt-2 filter drop-shadow-sm">Rp 59.000</span>
                             <span class="text-xs text-gray-500 font-medium uppercase tracking-wider mt-2">Tanpa Biaya Bulanan</span>
                         </div>
                     </div>
@@ -566,36 +530,42 @@
                     <!-- Features List -->
                     <ul class="space-y-4 mb-10">
                         <li class="flex items-center text-gray-800 text-base font-medium">
-                            <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mr-3 text-green-600"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center mr-3 text-blue-600"><i class="fa-solid fa-check text-xs"></i></div>
                             <span>Akses <b>Unlimited</b> Sekali Bayar</span>
                         </li>
                         
                         <!-- Highlighted Feature -->
-                        <li class="flex items-center text-purple-800 text-base font-bold bg-purple-50 p-3 rounded-xl border border-purple-100 shadow-sm -mx-3">
-                            <div class="w-6 h-6 rounded-full bg-purple-200 flex items-center justify-center mr-3 text-purple-700 flex-shrink-0"><i class="fa-solid fa-star text-xs"></i></div>
+                        <li class="flex items-center text-indigo-800 text-base font-bold bg-indigo-50 p-3 rounded-xl border border-indigo-100 shadow-sm -mx-3">
+                            <div class="w-6 h-6 rounded-full bg-indigo-200 flex items-center justify-center mr-3 text-indigo-700 flex-shrink-0"><i class="fa-solid fa-star text-xs"></i></div>
                             <span>Konsisten Suara dari Awal hingga Akhir</span>
                         </li>
 
+                        <!-- New Bonus Feature -->
+                        <li class="flex items-center text-gray-800 text-base font-bold">
+                            <div class="w-6 h-6 rounded-full bg-yellow-100 flex items-center justify-center mr-3 text-yellow-600"><i class="fa-solid fa-gift text-xs"></i></div>
+                            <span>Gratis 5 Jenis Template Siap Pakai</span>
+                        </li>
+
                         <li class="flex items-center text-gray-700 text-base">
-                            <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center mr-3 text-orange-600"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div class="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center mr-3 text-blue-500"><i class="fa-solid fa-check text-xs"></i></div>
                             <span>Max Durasi ± 3 Menit per Project</span>
                         </li>
                         <li class="flex items-center text-gray-700 text-base">
-                            <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center mr-3 text-orange-600"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div class="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center mr-3 text-blue-500"><i class="fa-solid fa-check text-xs"></i></div>
                             <span>Download High Quality WAV</span>
                         </li>
                         <li class="flex items-center text-gray-700 text-base">
-                            <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center mr-3 text-orange-600"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div class="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center mr-3 text-blue-500"><i class="fa-solid fa-check text-xs"></i></div>
                             <span>13 Pilihan Karakter Suara Premium</span>
                         </li>
                         <li class="flex items-center text-gray-700 text-base">
-                            <div class="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center mr-3 text-orange-600"><i class="fa-solid fa-check text-xs"></i></div>
+                            <div class="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center mr-3 text-blue-500"><i class="fa-solid fa-check text-xs"></i></div>
                             <span>Akses Berbagai Macam Bahasa</span>
                         </li>
                     </ul>
 
-                    <a href="https://wa.me/6285693623474?text=Halo%20Admin%20Voice%20Turbo!%20%F0%9F%91%8B%20Saya%20beruntung%20banget%20lihat%20promo%20ini.%20Saya%20mau%20amankan%20akses%20*Unlimited%20Lifetime*%20seharga%20*Rp%2069.000*%20sebelum%20harganya%20naik%20kembali%20normal.%20Tolong%20bantu%20saya%20proses%20pembayarannya%20sekarang%20ya,%20saya%20sudah%20tidak%20sabar%20mau%20bikin%20konten%20viral!%20%F0%9F%9A%80" target="_blank" class="block w-full py-4 bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white text-center rounded-xl font-bold text-lg transition-all transform hover:scale-[1.02] shadow-xl shadow-orange-500/30 border border-white/20">
-                        Ambil Promo Sekarang <i class="fa-solid fa-arrow-right ml-2"></i>
+                    <a href="https://wa.me/6285693623474?text=Halo%20Admin%20Voice%20Turbo!%20%F0%9F%91%8B%20Saya%20mau%20klaim%20*PROMO%20RAMADHAN*%20Unlimited%20Lifetime%20seharga%20*Rp%2059.000*%20%2B%20Bonus%20Template.%20Mohon%20info%20pembayarannya%20sebelum%20promo%20berakhir!%20%F0%9F%8C%99" target="_blank" class="block w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-center rounded-xl font-bold text-lg transition-all transform hover:scale-[1.02] shadow-xl shadow-blue-500/30 border border-white/20">
+                        Ambil Promo Ramadhan <i class="fa-solid fa-arrow-right ml-2"></i>
                     </a>
                     <p class="text-center text-xs text-gray-500 mt-4 font-medium">Garansi uang kembali 7 hari.</p>
                 </div>
@@ -619,40 +589,42 @@
         </div>
     </section>
 
-<section id="testimoni" class="relative py-24 bg-transparent">
+    <!-- Testimonials Section (Image Gallery) -->
+    <section id="testimonials" class="relative z-10 py-24 bg-gradient-to-tr from-slate-900 via-slate-800 to-pink-900/10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-semibold text-white mb-4 uppercase tracking-wider">
+                    Feedback
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Kata Pelanggan Voice Turbo</h2>
+                <p class="text-purple-100 max-w-2xl mx-auto">Pendapat jujur dari mereka yang telah merasakan dampaknya.</p>
+            </div>
 
-  <!-- WRAPPER PENTING (STACKING CONTEXT) -->
-  <div class="relative z-[50] max-w-6xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Testimonial Image 1 -->
+                <div class="glass-card p-2 rounded-2xl hover:-translate-y-2 transition-transform duration-300 w-full md:w-[350px] shadow-xl">
+                    <img src="https://image2url.com/r2/default/images/1770135881334-4889e7e9-128f-4f27-9056-c90d0336b863.jpg" alt="Testimoni Pelanggan Voice Turbo" class="w-full h-auto rounded-xl border border-white/10" loading="lazy">
+                </div>
+                
+                <!-- Testimonial Image 2 -->
+                <div class="glass-card p-2 rounded-2xl hover:-translate-y-2 transition-transform duration-300 w-full md:w-[350px] shadow-xl">
+                    <img src="https://image2url.com/r2/default/images/1770135919641-b4e895d5-c914-42fb-91d1-7306ce89eb2d.jpg" alt="Testimoni Pelanggan Voice Turbo" class="w-full h-auto rounded-xl border border-white/10" loading="lazy">
+                </div>
 
-    <h2 class="text-4xl font-bold text-white text-center mb-4">
-      Kata Pelanggan Voice Turbo
-    </h2>
+                <!-- Testimonial Image 3 -->
+                <div class="glass-card p-2 rounded-2xl hover:-translate-y-2 transition-transform duration-300 w-full md:w-[350px] shadow-xl">
+                    <img src="https://image2url.com/r2/default/images/1770136018894-ef3592d5-0d72-412f-9ef9-1430038c03cf.jpg" alt="Testimoni Pelanggan Voice Turbo" class="w-full h-auto rounded-xl border border-white/10" loading="lazy">
+                </div>
 
-    <p class="text-center text-purple-200 mb-12">
-      Pendapat jujur dari mereka yang telah merasakan dampaknya.
-    </p>
+                <!-- Testimonial Image 4 -->
+                <div class="glass-card p-2 rounded-2xl hover:-translate-y-2 transition-transform duration-300 w-full md:w-[350px] shadow-xl">
+                    <img src="https://image2url.com/r2/default/images/1770136045973-c472893e-08c2-4a0e-8147-6075f44ea2ba.jpg" alt="Testimoni Pelanggan Voice Turbo" class="w-full h-auto rounded-xl border border-white/10" loading="lazy">
+                </div>
 
-    <!-- GRID TESTIMONI (TANPA z-index) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <img src="/assets/testimoni/testi-1.png" class="w-full rounded-xl shadow-lg" alt="Testimoni 1">
-      <img src="/assets/testimoni/testi-2.png" class="w-full rounded-xl shadow-lg" alt="Testimoni 2">
-      <img src="/assets/testimoni/testi-3.png" class="w-full rounded-xl shadow-lg" alt="Testimoni 3">
-      <img src="/assets/testimoni/testi-4.png" class="w-full rounded-xl shadow-lg" alt="Testimoni 4">
-      <img src="/assets/testimoni/testi-5.png" class="w-full rounded-xl shadow-lg" alt="Testimoni 5">
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-
-
-
-              
-               
+                <!-- Testimonial Image 5 -->
+                <div class="glass-card p-2 rounded-2xl hover:-translate-y-2 transition-transform duration-300 w-full md:w-[350px] shadow-xl">
+                    <img src="https://image2url.com/r2/default/images/1770136074793-972ff76a-5260-4787-98d6-ec324112b727.jpg" alt="Testimoni Pelanggan Voice Turbo" class="w-full h-auto rounded-xl border border-white/10" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
@@ -687,7 +659,7 @@
                         </span>
                     </summary>
                     <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 bg-white">
-                        Artinya Anda hanya perlu membayar sekali (One-time payment) sebesar harga promo yang tertera (Rp 69.000) untuk mendapatkan akses selamanya. Tidak ada biaya langganan bulanan, tahunan, atau biaya tersembunyi lainnya di masa depan.
+                        Artinya Anda hanya perlu membayar sekali (One-time payment) sebesar harga promo yang tertera (Rp 49.000) untuk mendapatkan akses selamanya. Tidak ada biaya langganan bulanan, tahunan, atau biaya tersembunyi lainnya di masa depan.
                     </div>
                 </details>
 
@@ -705,13 +677,13 @@
 
                 <details class="group bg-white rounded-xl overflow-hidden transition-all duration-300 shadow-sm">
                     <summary class="flex justify-between items-center cursor-pointer p-6 font-semibold text-gray-900 list-none hover:bg-gray-50 transition-colors">
-                        <span>Bagaimana cara klaim promo Rp 69.000?</span>
+                        <span>Bagaimana cara klaim promo Rp 49.000?</span>
                         <span class="transition-transform group-open:rotate-180">
                             <i class="fa-solid fa-chevron-down text-gray-400"></i>
                         </span>
                     </summary>
                     <div class="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 bg-white">
-                        Sangat mudah. Cukup klik tombol "Ambil Promo Sekarang" atau tombol WhatsApp yang tersedia di halaman ini. Anda akan diarahkan ke admin kami untuk proses aktivasi paket promo spesial ini.
+                        Sangat mudah. Cukup klik tombol "Ambil Promo Idul Fitri" atau tombol WhatsApp yang tersedia di halaman ini. Anda akan diarahkan ke admin kami untuk proses aktivasi paket promo spesial ini.
                     </div>
                 </details>
 
@@ -753,7 +725,7 @@
                 Jangan biarkan kualitas audio menghambat pertumbuhan Anda. Konsultasikan kebutuhan Anda atau pesan paket langsung sekarang.
             </p>
             
-            <a href="https://wa.me/6285693623474?text=Halo%20Admin%20Voice%20Turbo!%20%F0%9F%91%8B%20Saya%20siap%20mengubah%20kualitas%20konten%20saya%20jadi%20level%20studio.%20Saya%20tertarik%20klaim%20*PROMO%20SPESIAL%20Unlimited%20Lifetime%2069RB*%20dan%20dapat%20*Garansi%207%20Hari*-nya.%20Tolong%20info%20cara%20mulainya%20ya,%20saya%20ingin%20segera%20produktif%20tanpa%20ribet%20rekaman%20lagi!%20%F0%9F%94%A5" target="_blank" class="inline-flex items-center justify-center px-8 py-5 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full text-lg transition-all transform hover:scale-105 shadow-xl shadow-green-500/30 gap-3 group">
+            <a href="https://wa.me/6285693623474?text=Halo%20Admin%20Voice%20Turbo!%20%F0%9F%91%8B%20Saya%20siap%20mengubah%20kualitas%20konten%20saya%20jadi%20level%20studio.%20Saya%20tertarik%20klaim%20*PROMO%20IDUL%20FITRI%2049RB*%20dan%20dapat%20*Garansi%207%20Hari*-nya.%20Tolong%20info%20cara%20mulainya%20ya,%20saya%20ingin%20segera%20produktif%20tanpa%20ribet%20rekaman%20lagi!%20%F0%9F%94%A5" target="_blank" class="inline-flex items-center justify-center px-8 py-5 bg-green-500 hover:bg-green-600 text-white font-bold rounded-full text-lg transition-all transform hover:scale-105 shadow-xl shadow-green-500/30 gap-3 group">
                 <i class="fa-brands fa-whatsapp text-2xl group-hover:animate-bounce"></i>
                 <span>Pesan Sekarang via WhatsApp</span>
             </a>
@@ -772,10 +744,7 @@
                     <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-600 to-orange-500 flex items-center justify-center text-white font-bold">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
-                    <div class="flex flex-col">
-                        <span class="text-2xl font-bold text-white leading-none">Voice<span class="text-orange-400">Turbo</span></span>
-                        <span class="text-[10px] text-white/60 font-semibold tracking-wide">by turbo_aistudio</span>
-                    </div>
+                    <span class="text-2xl font-bold text-white">Voice<span class="text-orange-400">Turbo</span></span>
                 </div>
                 <div class="flex gap-6">
                     <a href="#" class="text-white/70 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
@@ -808,45 +777,265 @@
             menu.classList.toggle('hidden');
         }
 
-        // Initialize Visualizer Bars (Wrapped in DOMContentLoaded)
+        // Start Promo Timer
         document.addEventListener('DOMContentLoaded', () => {
-            const visualizer = document.getElementById('visualizer');
-            if (visualizer) { 
-                for (let i = 0; i < 20; i++) {
-                    const bar = document.createElement('div');
-                    bar.className = 'bar w-1.5 bg-gradient-to-t from-orange-500 to-purple-600 rounded-full h-2 mx-0.5 opacity-50';
-                    bar.style.height = Math.floor(Math.random() * 40 + 10) + '%'; 
-                    visualizer.appendChild(bar);
-                }
-            }
-            
-            // Start Promo Timer
-            startPromoTimer();
-        });
-
-        // PROMO TIMER FUNCTION
-        function startPromoTimer() {
             const timerElement = document.getElementById('promo-timer');
             if (!timerElement) return;
 
-            let time = 30 * 60; 
+            // Target Date: 17 February 2026, 23:59:59
+            // Assuming the promo is in the current or upcoming February relative to "now".
+            // Since "now" is Feb 1, 2026, and promo is 15-17 Feb.
+            const now = new Date();
+            let targetYear = now.getFullYear();
+            
+            // Check if Feb 17 has passed this year, if so, target next year?
+            // But usually promos are current.
+            // Let's set a fixed target for the demo based on the prompt's context.
+            // Assuming current year.
+            const countDownDate = new Date(`Feb 17, ${targetYear} 23:59:59`).getTime();
 
             const timerInterval = setInterval(() => {
-                const minutes = Math.floor(time / 60);
-                let seconds = time % 60;
-                seconds = seconds < 10 ? '0' + seconds : seconds;
-                let displayMinutes = minutes < 10 ? '0' + minutes : minutes;
+                const nowTime = new Date().getTime();
+                const distance = countDownDate - nowTime;
 
-                timerElement.textContent = `${displayMinutes}:${seconds}`;
-
-                if (time > 0) {
-                    time--;
-                } else {
+                if (distance < 0) {
                     clearInterval(timerInterval);
-                    timerElement.textContent = "00:00";
-                    timerElement.classList.add('text-red-500');
+                    timerElement.textContent = "00:00:00:00";
+                    timerElement.classList.add('text-red-600');
+                    return;
                 }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                const displayDays = days < 10 ? '0' + days : days;
+                const displayHours = hours < 10 ? '0' + hours : hours;
+                const displayMinutes = minutes < 10 ? '0' + minutes : minutes;
+                const displaySeconds = seconds < 10 ? '0' + seconds : seconds;
+
+                timerElement.textContent = `${displayDays}:${displayHours}:${displayMinutes}:${displaySeconds}`;
             }, 1000);
+        });
+
+        // --- REAL SPEECH SYNTHESIS LOGIC ---
+        
+        let demoTimeout;
+        let timerInterval;
+
+        function updateWordCount() {
+            const text = document.getElementById('demo-input').value;
+            const words = text.trim().split(/\s+/).filter(word => word.length > 0).length;
+            const counter = document.getElementById('word-count');
+            const errorMsg = document.getElementById('error-msg');
+            const btn = document.getElementById('generate-btn');
+
+            counter.innerText = words + "/200 Kata";
+            
+            if (words > 200) {
+                counter.classList.add('text-red-500');
+                errorMsg.innerText = "Teks melebihi batas 200 kata untuk demo.";
+                errorMsg.classList.remove('hidden');
+                btn.disabled = true;
+                btn.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                counter.classList.remove('text-red-500');
+                errorMsg.classList.add('hidden');
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        function playDemo() {
+            const text = document.getElementById('demo-input').value;
+            const btn = document.getElementById('generate-btn');
+            const btnText = btn.querySelector('span');
+            const icon = btn.querySelector('i');
+            const status = document.getElementById('status-text');
+            const visualizerContainer = document.getElementById('visualizer');
+            const voiceSelect = document.getElementById('voice-select').value;
+            
+            if (!text.trim()) {
+                alert("Silakan masukkan teks terlebih dahulu.");
+                return;
+            }
+
+            // Stop any playing audio immediately
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
+            clearTimeout(demoTimeout);
+            clearInterval(timerInterval);
+
+            // Setup UI
+            status.style.opacity = '1';
+            status.innerText = 'Memuat suara...';
+            btn.disabled = true;
+            btnText.innerText = 'Memproses...';
+            icon.className = 'fa-solid fa-spinner fa-spin';
+
+            if (!('speechSynthesis' in window)) {
+                alert("Maaf, browser Anda tidak mendukung fitur ini.");
+                stopDemo();
+                return;
+            }
+
+            // Create Utterance
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'id-ID'; // Force Indonesian
+            utterance.volume = 1.0; // Max volume for clarity
+
+            // Get available voices
+            const voices = window.speechSynthesis.getVoices();
+            
+            // Filter Indonesian voices. Some browsers use 'id_ID', some 'id-ID'
+            let idVoices = voices.filter(v => v.lang.replace('_', '-').includes('id-ID'));
+            
+            // Fallback if no ID voice found (use generic 'id' or english as last resort)
+            if (idVoices.length === 0) {
+                idVoices = voices.filter(v => v.lang.includes('id') || v.lang.includes('en'));
+            }
+
+            let selectedVoice = null;
+
+            // --- KARAKTER SUARA YANG LEBIH PRESISI ---
+            
+            if (voiceSelect === 'daniel') {
+                // Daniel: Steady Broadcaster (Wibawa, Berat, Tenang)
+                
+                // 1. Cari suara yang mengandung kata 'male', 'pria', atau 'cowok'
+                selectedVoice = idVoices.find(v => 
+                    v.name.toLowerCase().includes('male') || 
+                    v.name.toLowerCase().includes('pria') ||
+                    v.name.toLowerCase().includes('david') || 
+                    v.name.toLowerCase().includes('rizwan')
+                );
+
+                // Tuning Audio Daniel:
+                // Pitch rendah (0.7) untuk efek suara berat/maskulin
+                // Rate lambat (0.85) untuk efek wibawa/broadcaster
+                utterance.pitch = 0.7; 
+                utterance.rate = 0.85;   
+
+            } else if (voiceSelect === 'jesica') {
+                // Jesica: Playful, Bright, Warm (Ceria, Terang, Ramah)
+                
+                // 1. Cari suara yang mengandung kata 'female', 'wanita', 'google', atau 'siti'
+                // Prioritas Google Voice karena biasanya wanita dan kualitasnya bagus di Chrome Android
+                selectedVoice = idVoices.find(v => 
+                    v.name.toLowerCase().includes('google') ||
+                    v.name.toLowerCase().includes('female') || 
+                    v.name.toLowerCase().includes('wanita') ||
+                    v.name.toLowerCase().includes('gadis')
+                );
+
+                // Tuning Audio Jesica:
+                // Pitch tinggi (1.2) untuk efek suara wanita/ceria
+                // Rate cepat (1.1) untuk efek antusias/playful
+                utterance.pitch = 1.2; 
+                utterance.rate = 1.1;  
+            }
+
+            // Jika tidak menemukan voice spesifik gender, pakai suara default bahasa tersebut
+            // tapi TETAP aplikasikan pitch/rate di atas untuk membedakan karakter.
+            if (!selectedVoice && idVoices.length > 0) {
+                selectedVoice = idVoices[0];
+            }
+
+            if (selectedVoice) {
+                utterance.voice = selectedVoice;
+            }
+
+            // Events
+            utterance.onstart = function() {
+                status.innerText = 'Sedang dimainkan...';
+                visualizerContainer.classList.add('animate-sound');
+                btn.disabled = false;
+                btnText.innerText = 'Berhenti';
+                icon.className = 'fa-solid fa-stop';
+                btn.onclick = stopDemo;
+
+                // Start Visual Timer
+                let timeLeft = 15; // Set max duration preview
+                const timeDisplay = document.getElementById('time-display');
+                const progressBar = document.getElementById('progress-bar');
+                progressBar.style.width = '0%';
+                
+                // Kalkulasi durasi perkiraan berdasarkan panjang teks & kecepatan bicara
+                // Rata-rata 1 kata = 0.5 detik pada speed normal.
+                // Kita gunakan timer visual saja untuk efek demo.
+                
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    // Update progress bar visual (approximate)
+                    const percentage = ((15 - timeLeft) / 15) * 100;
+                    progressBar.style.width = Math.min(percentage, 100) + '%';
+                    
+                    timeDisplay.innerText = `00:${Math.max(0, 15 - timeLeft).toString().padStart(2, '0')}`;
+                    
+                    if (timeLeft <= 0) {
+                        stopDemo(); // Stop after 15s limit
+                    }
+                }, 1000);
+
+                // Hard stop limit
+                demoTimeout = setTimeout(() => {
+                    stopDemo();
+                }, 15000);
+            };
+
+            utterance.onend = stopDemo;
+            
+            utterance.onerror = function(e) {
+                console.error("Speech Error:", e);
+                // Jangan tampilkan error mencolok ke user, cukup reset tombol
+                stopDemo();
+                status.innerText = 'Selesai / Terhenti.';
+            };
+
+            // Speak
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function stopDemo() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
+            clearTimeout(demoTimeout);
+            clearInterval(timerInterval);
+
+            const btn = document.getElementById('generate-btn');
+            const btnText = btn.querySelector('span');
+            const icon = btn.querySelector('i');
+            const status = document.getElementById('status-text');
+            const visualizerContainer = document.getElementById('visualizer');
+            const progressBar = document.getElementById('progress-bar');
+            const timeDisplay = document.getElementById('time-display');
+
+            visualizerContainer.classList.remove('animate-sound');
+            
+            // Reset UI
+            status.style.opacity = '0';
+            icon.className = 'fa-solid fa-play';
+            btnText.innerText = 'Play Demo';
+            btn.disabled = false;
+            btn.onclick = playDemo;
+            
+            progressBar.style.width = '0%';
+            timeDisplay.innerText = '00:00';
+        }
+
+        // Preload voices properly across browsers
+        function loadVoices() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.getVoices();
+            }
+        }
+        
+        loadVoices();
+        if (typeof window !== 'undefined' && window.speechSynthesis && window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
         }
 
     </script>
